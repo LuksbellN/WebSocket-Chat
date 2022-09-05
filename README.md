@@ -1,9 +1,9 @@
 # WebSocket-Chat
 Chat realizado junto com a B7WEB utilizando webscoket
 
-##Instalando
+## _Instalando_
 -- npm install
-##Inicializando
+## Inicializando
 -- node server.ts
-##URL
+## URL
 --http://localhost:3000
