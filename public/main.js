@@ -42,10 +42,14 @@ loginInput.addEventListener('keyup', (e) => {
     if(e.keyCode === 13) {
         let name = loginInput.value.trim();
         if(name != '') {
-            username = name;
-            document.title = 'Chat('+username+')'
-
-            socket.emit('join-request', username);
+            if(!userList || !userList.includes(name)) {
+                console.log(userList)
+                username = name;
+                document.title = 'Chat('+username+')'
+                socket.emit('join-request', username);
+            } else {
+                alert("Já existe alguém com esse nome na sala!")
+            }
         }
     }
 })

@@ -17,7 +17,10 @@ let connectedUsers = [];
 
 io.on('connection', (socket) => {
     console.log("Conexão detectada...");
-
+    socket.broadcast.emit('list-update', {
+        joined: username,
+        list: connectedUsers
+    })
     socket.on('join-request', (username) => {
         socket.username = username;
         connectedUsers.push(username);
